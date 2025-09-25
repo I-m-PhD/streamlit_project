@@ -387,8 +387,8 @@ def calculate_cash_flow_statement(period: str):
 
 # 页面布局
 initialize_session_state()
-st.set_page_config(layout="wide", page_title="交互式财务报表")
-st.title('交互式财务报表')
+st.set_page_config(layout="wide", page_title="Financial Statements")
+st.title('Financial Statements')
 st.markdown("请在下方的输入框中填写数据，勾稽关系将自动更新。")
 st.divider()
 

@@ -11,7 +11,7 @@ def generate_invisible_text(input_characters, invisible_char):
 
 st.set_page_config(page_title="Invisible Character Generator", layout="centered")
 
-st.title("👻 Invisible Character Generator")
+st.title("Invisible Character Generator")
 st.markdown(
     """
     This app replaces each character you type with optional single, non-visible Unicode character.
