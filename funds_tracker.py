@@ -6,7 +6,7 @@ import pandas as pd
 import plotly.express as px
 
 # Set up the page
-st.set_page_config(layout="wide")
+st.set_page_config(layout="wide", page_title="Alipay Fund Performance Tracker")
 st.title("Alipay Fund Performance Tracker")
 st.markdown("---")
 
