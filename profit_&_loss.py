@@ -3,8 +3,8 @@ import pandas as pd
 import plotly.graph_objects as go
 from typing import Optional
 
-st.set_page_config(page_title="金税四期 损益计算", layout="wide")
-st.title("金税四期 损益计算")
+st.set_page_config(page_title="Profit & Loss ", layout="wide")
+st.title("Profit & Loss Calculator")
 
 col_left, col_right = st.columns([1, 3], gap="large")
 
