@@ -1,0 +1,9 @@
+python-dateutil
+streamlit
+watchdog
+requests
+pandas
+pandas-stubs
+numpy
+lxml
+plotly
