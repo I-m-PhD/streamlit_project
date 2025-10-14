@@ -1,5 +1,7 @@
-/.archive/
-/.venv/
+.archive/
+.venv/
 
-/zmzb/
+zmzb/
 zmzb.py
+
+.python-version
