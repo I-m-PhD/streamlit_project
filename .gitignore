@@ -1,5 +1,7 @@
 .archive/
 .venv/
+.idea/
+.vscode/
 
 zmzb/
 zmzb.py
