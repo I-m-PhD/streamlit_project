@@ -293,32 +293,33 @@ def show_statistics(all_content, data_name, crawl_time):
     # --- 新增：第 3 个板块：原始数据表格 ---
     # 仅为 '所有招采_正在招标_北京' 这个数据集添加表格
     if data_name == "所有招采_正在招标_北京":
-        st.subheader("3. 北京正在招标数据表")
+        st.subheader("3. 原始数据表")
 
-        # 1. 定义我们期望的列及其用户友好的名称
+        # 1. 定义我们期望的列及其用户友好的名称 (已更新为 JSON 中实际存在的字段)
         required_cols_map = {
             'publishDate': '发布时间',
-            'publishTitle': '标题',
-            'companyName': '公司',
-            'publishOneType': '一级类型',
-            'publishType': '二级类型',
-            'detailUrl': '详情链接'
+            'companyTypeName': '公司区域', # 根据 JSON 示例的字段进行映射
+            'name': '标题',               # 使用 'name' 替换不存在的 'publishTitle'
+            'tenderSaleDeadline': '截标时间',
+            'backDate': '退回时间'
         }
 
         # 2. 检查哪些必需的列在 DataFrame (df) 中实际存在
+        # 使用原始的 df (未经过日期过滤) 来确保所有原始数据都可用
         available_cols = [col for col in required_cols_map.keys() if col in df.columns]
 
         if not available_cols:
-            st.warning("无法显示数据表：抓取的数据中缺少必要的字段（如标题、链接等）。")
+            st.warning("无法显示数据表：抓取的数据中缺少必要的字段。")
+            # 即使无法显示表格，也不应阻止 Streamlit 运行
             return
 
         # 3. 仅选择存在的列，并准备重命名映射
         rename_map = {col: required_cols_map[col] for col in available_cols}
 
-        # 4. 创建用于展示的 DataFrame
+        # 4. 创建用于展示的 DataFrame (使用原始 df，然后精简列)
         display_df = df[available_cols].rename(columns=rename_map)
 
-        # 降序排列（最新的在最上面），确保 '发布时间' 存在
+        # 降序排列（最新的在最上面），使用中文列名
         if '发布时间' in display_df.columns:
             display_df = display_df.sort_values(by='发布时间', ascending=False)
 
