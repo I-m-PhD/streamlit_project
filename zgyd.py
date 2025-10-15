@@ -12,7 +12,7 @@ from datetime import datetime
 BASE_URL = 'https://b2b.10086.cn'
 POST_URL = f'{BASE_URL}/api-b2b/api-sync-es/white_list_api/b2b/publish/queryList'
 # 使用固定的本地文件夹来存储数据
-OUTPUT_DIR = "zgyd"
+OUTPUT_DIR = "./zgyd"
 
 # 定义所有需要采集的任务配置
 TASK_CONFIG = {
