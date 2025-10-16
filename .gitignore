@@ -1,8 +1,8 @@
-.archive/
+.python-version
+
 .venv/
 .idea/
 .vscode/
-
-.python-version
+.archive/
 
 .DS_Store
